@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b1326;
+  --foreground: #dae2fd;
+  
+  --surface-lowest: #060e20;
+  --surface: #0b1326;
+  --surface-container: #171f33;
+  --surface-high: #242c40;
+  
+  --primary: #2563eb;
+  --primary-container: #1d4ed8;
+  
+  --on-surface: #dae2fd;
+  --ghost-border: rgba(67, 70, 83, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
+  
+  --color-surface-lowest: var(--surface-lowest);
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-high);
+  
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  
+  --color-on-surface: var(--on-surface);
+  --color-ghost-border: var(--ghost-border);
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: radial-gradient(circle at 50% -20%, var(--surface-container) 0%, var(--surface) 100%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
