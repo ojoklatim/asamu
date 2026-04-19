@@ -2,7 +2,7 @@ const partners = [
   {
     name: "Crown Beverages Limited",
     short: "CB",
-    logoUrl: "https://logo.clearbit.com/pepsi.com",
+    logoUrl: "https://cdn.brandfetch.io/idGhGN0KKe/w/186/h/186/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "Uganda's leading beverage manufacturer. Partners with ASAMU for annual internship programs in their finance and audit departments.",
     internships: "Finance Intern, Internal Audit Intern",
     recruiting: true,
@@ -10,7 +10,7 @@ const partners = [
   {
     name: "ACCA",
     short: "ACCA",
-    logoUrl: "https://logo.clearbit.com/accaglobal.com",
+    logoUrl: "https://cdn.brandfetch.io/idpHg8V0Ma/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "The Association of Chartered Certified Accountants. Provides discounted student registrations and exam prep workshops for ASAMU members.",
     internships: "Global Accounting Apprenticeships",
     recruiting: true,
@@ -18,7 +18,7 @@ const partners = [
   {
     name: "ICPAU",
     short: "ICPAU",
-    logoUrl: "https://logo.clearbit.com/icpau.co.ug",
+    logoUrl: "https://cdn.brandfetch.io/idmWYzglhv/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "Institute of Certified Public Accountants of Uganda. Co-hosts academic clinics and offers mentorship through practicing CPAs.",
     internships: "CPA Mentorship Program",
     recruiting: false,
@@ -26,7 +26,7 @@ const partners = [
   {
     name: "Deloitte",
     short: "DT",
-    logoUrl: "https://logo.clearbit.com/deloitte.com",
+    logoUrl: "https://cdn.brandfetch.io/idIu-Ji9Le/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "Global Big Four firm with a strong Uganda presence. Recruits top ASAMU talent for audit, tax, and advisory graduate programs.",
     internships: "Audit Intern, Tax Intern, Advisory Intern",
     recruiting: true,
@@ -34,7 +34,7 @@ const partners = [
   {
     name: "Forvis Mazars",
     short: "FM",
-    logoUrl: "https://logo.clearbit.com/mazars.com",
+    logoUrl: "https://cdn.brandfetch.io/ide7sazwRe/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "Formerly Mazars Uganda. International audit and advisory firm offering structured internship rotations for accounting students.",
     internships: "Audit Associate Intern, Risk Advisory Intern",
     recruiting: true,
@@ -42,7 +42,7 @@ const partners = [
   {
     name: "Uganda Institute of Banking & Financial Services",
     short: "UIBFS",
-    logoUrl: "https://logo.clearbit.com/uibfs.or.ug",
+    logoUrl: "https://cdn.brandfetch.io/idEkpFi-FP/w/2287/h/1987/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "The professional body for banking in Uganda. Partners with ASAMU on financial services career workshops and certifications.",
     internships: "Banking Operations Intern",
     recruiting: false,
@@ -50,7 +50,7 @@ const partners = [
   {
     name: "BDO Uganda",
     short: "BDO",
-    logoUrl: "https://logo.clearbit.com/bdo.com",
+    logoUrl: "https://cdn.brandfetch.io/idx6n7rpj8/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
     desc: "Global mid-tier accounting firm. Actively recruits ASAMU members for audit engagements and provides ACCA sponsorships.",
     internships: "Audit Intern, Accounting Intern",
     recruiting: true,

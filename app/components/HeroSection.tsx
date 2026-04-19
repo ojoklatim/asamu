@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import LogoMarquee from "./LogoMarquee";
 
 export default function HeroSection() {
   const [text, setText] = useState("");
@@ -90,6 +91,8 @@ export default function HeroSection() {
             </div>
           ))}
         </div>
+
+        <LogoMarquee />
       </div>
     </section>
   );
