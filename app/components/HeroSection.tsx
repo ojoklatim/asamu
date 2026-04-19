@@ -1,3 +1,4 @@
+// Force rebuild to fix chunk load error
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -7,10 +8,17 @@ export default function HeroSection() {
       className="relative pt-32 sm:pt-40 md:pt-48 pb-20 sm:pb-24 md:pb-32 px-4 sm:px-6 md:px-8 flex flex-col items-start hero-gradient min-h-[90vh] justify-center overflow-hidden"
     >
       <div className="max-w-6xl w-full mx-auto relative z-10">
-        <p className="text-xs tracking-[0.4em] uppercase text-accent font-bold mb-6">
-          Makerere University Business School
-        </p>
-        <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[0.85] tracking-tighter text-foreground mb-8">
+        <div className="flex items-center gap-4 mb-6">
+          <img 
+            src="https://mubs.ac.ug/wp-content/uploads/2025/07/makerere-university-business-school-mubs-seeklogo-97x94.png" 
+            alt="MUBS Logo" 
+            className="w-12 h-12 object-contain"
+          />
+          <p className="text-xs tracking-[0.4em] uppercase text-accent font-bold">
+            Makerere University Business School
+          </p>
+        </div>
+        <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-[0.85] tracking-tighter text-foreground mb-8">
           Empowering the next
           <br />
           <em className="italic text-primary">generation</em> of

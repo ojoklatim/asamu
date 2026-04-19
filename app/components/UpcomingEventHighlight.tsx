@@ -40,7 +40,7 @@ export default function UpcomingEventHighlight() {
           </div>
         </div>
         
-        <div className="flex items-center gap-4 w-full md:w-auto shrink-0">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto shrink-0">
           <Link
             href="/events"
             className="w-full md:w-auto px-8 py-3 bg-white border border-subtle-border text-foreground font-bold rounded-full hover:bg-stats-bg transition-colors text-center text-sm shadow-sm"
@@ -55,3 +55,4 @@ export default function UpcomingEventHighlight() {
     </section>
   );
 }
+

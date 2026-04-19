@@ -41,7 +41,7 @@ export default function ContactSection() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm shadow-sm"
+                    className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-base shadow-sm"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -55,7 +55,7 @@ export default function ContactSection() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm shadow-sm"
+                    className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-base shadow-sm"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -70,7 +70,7 @@ export default function ContactSection() {
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-sm resize-none shadow-sm"
+                  className="w-full px-6 py-4 bg-white border border-subtle-border rounded-xl text-foreground placeholder-muted-foreground outline-none focus:ring-2 focus:ring-primary/50 transition-all text-base resize-none shadow-sm"
                   placeholder="Tell us about your inquiry..."
                 />
               </div>
