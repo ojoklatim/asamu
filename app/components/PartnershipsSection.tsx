@@ -74,7 +74,7 @@ export default function PartnershipsSection() {
         {/* Partner logo bar */}
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 mb-20 pb-16 border-b border-subtle-border">
           {partners.map((p) => (
-            <img key={p.short} src={p.logoUrl} alt={p.name} className="h-8 md:h-10 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all hover:scale-110" />
+            <img key={p.short} src={p.logoUrl} alt={p.name} className="h-16 md:h-20 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all hover:scale-110" />
           ))}
         </div>
 

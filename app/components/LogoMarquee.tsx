@@ -20,11 +20,11 @@ export default function LogoMarquee() {
       </div>
       <div className="flex animate-marquee gap-16 items-center">
         {extendedPartners.map((partner, idx) => (
-          <div key={`${partner.name}-${idx}`} className="flex items-center justify-center min-w-[120px]">
+          <div key={`${partner.name}-${idx}`} className="flex items-center justify-center min-w-[200px]">
             <img 
               src={partner.logo} 
               alt={partner.name} 
-              className="h-8 md:h-10 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all hover:scale-110"
+              className="h-16 md:h-20 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all hover:scale-110"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
