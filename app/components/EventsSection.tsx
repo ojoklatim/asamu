@@ -15,67 +15,72 @@ const testimonials = [
 
 export default function EventsSection() {
   return (
-    <section id="events" className="py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-[#1d4ed8]">
+    <section id="events" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-white/70 font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Stay Engaged
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           Events & Activities
         </h2>
-        <p className="text-white/70 text-base md:text-lg max-w-2xl mb-12 md:mb-16">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-12 md:mb-16 leading-relaxed">
           From networking mixers to intensive bootcamps, ASAMU events are designed to accelerate your career.
         </p>
 
         {/* Events Calendar Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 md:mb-24">
           {upcomingEvents.map((event) => (
             <div
               key={event.title}
-              className="bg-surface-container p-6 md:p-8 rounded-lg hover:bg-surface-high transition-colors group flex flex-col justify-between min-h-[300px]"
+              className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group flex flex-col justify-between min-h-[350px]"
             >
               <div>
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="bg-white rounded-lg p-2.5 text-center min-w-[56px]">
-                    <div className="text-[10px] font-bold text-black uppercase tracking-widest">
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="bg-stats-bg rounded-2xl p-4 text-center min-w-[70px] border border-subtle-border">
+                    <div className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">
                       {event.month}
                     </div>
-                    <div className="text-xl font-black text-black leading-none mt-0.5">
+                    <div className="text-2xl font-black text-foreground leading-none mt-1">
                       {event.day}
                     </div>
                   </div>
                   <div>
-                    <span className="px-2.5 py-0.5 bg-white/10 text-white/80 text-[10px] tracking-[0.15em] uppercase font-bold rounded-full">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] tracking-[0.1em] uppercase font-bold rounded-md">
                       {event.type}
                     </span>
-                    <div className="text-sm text-on-surface/60 mt-1">{event.time}</div>
+                    <div className="text-sm text-muted-foreground mt-2 font-medium">{event.time}</div>
                   </div>
                 </div>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-on-surface tracking-tight leading-tight mb-3">
+                <h3 className="font-display text-2xl font-bold text-foreground tracking-tight leading-tight mb-4">
                   {event.title}
                 </h3>
-                <p className="text-on-surface/60 text-sm leading-relaxed">{event.desc}</p>
+                <p className="text-muted-foreground text-base leading-relaxed">{event.desc}</p>
               </div>
-              <button className="mt-6 w-full py-3 bg-white text-surface font-bold rounded-lg opacity-90 group-hover:opacity-100 transition-opacity">
-                Register
+              <button className="mt-8 w-full py-3.5 bg-primary text-primary-text font-bold rounded-full hover:scale-[1.02] transition-all shadow-lg shadow-primary/10">
+                Register Now
               </button>
             </div>
           ))}
         </div>
 
-        {/* Past Event Gallery Placeholders */}
-        <div className="mb-16 md:mb-20">
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-6 md:mb-8 tracking-tight">
-            Past Event Gallery
+        {/* Past Event Gallery */}
+        <div className="mb-16 md:mb-24">
+          <h3 className="font-display text-2xl font-bold text-foreground mb-10 tracking-tight flex items-center gap-3">
+            Past Events
+            <span className="h-[2px] flex-1 bg-accent/20"></span>
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {["Networking Mixer '24", "ACCA Workshop", "Annual Gala", "Career Fair '24", "Tax Seminar", "Leadership Summit", "Alumni Reunion", "Orientation Week"].map((name) => (
               <div
                 key={name}
-                className="aspect-square bg-surface-container rounded-lg flex items-center justify-center group hover:bg-surface-high transition-colors overflow-hidden relative"
+                className="aspect-square bg-stats-bg rounded-2xl flex items-center justify-center group border border-subtle-border hover:border-accent transition-all overflow-hidden relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-on-surface/30 text-[10px] sm:text-xs tracking-widest uppercase font-bold text-center px-2 sm:px-4 group-hover:text-white group-hover:relative group-hover:z-10 transition-colors">
+                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                  <span className="text-primary-text text-xs tracking-widest uppercase font-bold text-center">
+                    {name}
+                  </span>
+                </div>
+                <span className="text-accent/40 text-[10px] tracking-widest uppercase font-bold text-center px-4 group-hover:opacity-0 transition-opacity">
                   {name}
                 </span>
               </div>
@@ -85,20 +90,26 @@ export default function EventsSection() {
 
         {/* Testimonials */}
         <div>
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-6 md:mb-8 tracking-tight">
+          <h3 className="font-display text-2xl font-bold text-foreground mb-10 tracking-tight flex items-center gap-3">
             Member Testimonials
+            <span className="h-[2px] flex-1 bg-accent/20"></span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-surface-container p-6 md:p-8 rounded-lg">
-                <svg className="w-8 h-8 text-primary/50 mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <div key={t.name} className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border shadow-sm">
+                <svg className="w-10 h-10 text-accent/30 mb-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <p className="text-on-surface/80 text-sm leading-relaxed mb-6 italic">
+                <p className="text-foreground text-base leading-relaxed mb-8 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="font-display font-bold text-on-surface text-sm">{t.name}</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-on-surface/50 mt-0.5">{t.role}</div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-stats-bg border border-subtle-border" />
+                  <div>
+                    <div className="font-display font-bold text-foreground text-sm">{t.name}</div>
+                    <div className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mt-0.5">{t.role}</div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

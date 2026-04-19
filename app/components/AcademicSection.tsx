@@ -23,44 +23,45 @@ const clinics = [
 
 export default function AcademicSection() {
   return (
-    <section id="resources" className="py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-surface">
+    <section id="resources" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Study Smarter
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           Academic Resources
         </h2>
-        <p className="text-on-surface/60 text-base md:text-lg max-w-2xl mb-16">
-          Access exam preparation materials, past papers, study group schedules, and academic clinic sessions.
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
+          Access premium exam preparation materials, past papers, study group schedules, and academic clinic sessions.
         </p>
 
         {/* Downloadable Materials */}
-        <div className="mb-16">
-          <h3 className="font-display text-2xl font-bold text-on-surface mb-8 tracking-tight">
+        <div className="mb-20">
+          <h3 className="font-display text-2xl font-bold text-foreground mb-8 tracking-tight flex items-center gap-3">
             Downloadable Materials
+            <span className="h-[2px] flex-1 bg-accent/20"></span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((r) => (
               <div
                 key={r.title}
-                className="bg-surface-container p-5 md:p-6 rounded-lg hover:bg-surface-high transition-colors flex items-start justify-between gap-4"
+                className="bg-stats-bg/50 p-6 md:p-8 rounded-2xl border border-subtle-border hover:border-accent hover:shadow-xl hover:shadow-accent/5 transition-all group flex items-start justify-between gap-4"
               >
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2 py-0.5 bg-primary/15 text-primary text-[10px] tracking-[0.15em] uppercase font-bold rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="px-2.5 py-1 bg-primary text-primary-text text-[10px] tracking-[0.1em] uppercase font-bold rounded-md">
                       {r.type}
                     </span>
-                    <span className="text-[10px] text-on-surface/40 tracking-wide uppercase">
+                    <span className="text-[10px] text-muted-foreground tracking-wide uppercase font-medium">
                       {r.format} · {r.size}
                     </span>
                   </div>
-                  <h4 className="font-display text-base font-bold text-on-surface tracking-tight">
+                  <h4 className="font-display text-lg font-bold text-foreground tracking-tight leading-snug">
                     {r.title}
                   </h4>
                 </div>
-                <button className="shrink-0 w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center hover:bg-primary/30 transition-colors group">
-                  <svg className="w-5 h-5 text-primary group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <button className="shrink-0 w-12 h-12 rounded-full bg-white border border-subtle-border flex items-center justify-center hover:bg-primary hover:text-primary-text transition-all group shadow-sm">
+                  <svg className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 18h16" />
                   </svg>
                 </button>
@@ -70,21 +71,22 @@ export default function AcademicSection() {
         </div>
 
         {/* Study Groups & Clinics side by side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Study Groups */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-on-surface mb-6 tracking-tight">
-              Study Group Schedule
+            <h3 className="font-display text-2xl font-bold text-foreground mb-8 tracking-tight flex items-center gap-3">
+              Study Groups
+              <span className="h-[2px] flex-1 bg-accent/20"></span>
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {studyGroups.map((sg) => (
-                <div key={sg.subject} className="bg-surface-container p-4 md:p-5 rounded-lg flex items-center gap-4">
-                  <div className="bg-primary/15 rounded-lg p-3 text-center min-w-[60px]">
-                    <div className="text-[10px] font-bold text-primary uppercase tracking-widest">{sg.day.slice(0, 3)}</div>
+                <div key={sg.subject} className="bg-white p-5 md:p-6 rounded-2xl border border-subtle-border flex items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-stats-bg rounded-xl px-4 py-3 text-center min-w-[70px] border border-subtle-border">
+                    <div className="text-xs font-bold text-primary uppercase tracking-widest">{sg.day.slice(0, 3)}</div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-display text-sm font-bold text-on-surface">{sg.subject}</h4>
-                    <p className="text-on-surface/50 text-xs mt-0.5">{sg.time} · {sg.location}</p>
+                    <h4 className="font-display text-base font-bold text-foreground">{sg.subject}</h4>
+                    <p className="text-muted-foreground text-sm mt-1">{sg.time} · <span className="text-accent font-semibold">{sg.location}</span></p>
                   </div>
                 </div>
               ))}
@@ -93,18 +95,19 @@ export default function AcademicSection() {
 
           {/* Academic Clinics */}
           <div>
-            <h3 className="font-display text-2xl font-bold text-on-surface mb-6 tracking-tight">
-              Upcoming Academic Clinics
+            <h3 className="font-display text-2xl font-bold text-foreground mb-8 tracking-tight flex items-center gap-3">
+              Academic Clinics
+              <span className="h-[2px] flex-1 bg-accent/20"></span>
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {clinics.map((c) => (
-                <div key={c.topic} className="bg-surface-container p-4 md:p-5 rounded-lg flex items-center gap-4">
-                  <div className="bg-white rounded-lg p-3 text-center min-w-[60px]">
-                    <div className="text-xs font-black text-black leading-none">{c.date}</div>
+                <div key={c.topic} className="bg-white p-5 md:p-6 rounded-2xl border border-subtle-border flex items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-primary rounded-xl px-4 py-3 text-center min-w-[70px]">
+                    <div className="text-xs font-black text-primary-text leading-none">{c.date}</div>
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-display text-sm font-bold text-on-surface">{c.topic}</h4>
-                    <p className="text-on-surface/50 text-xs mt-0.5">Facilitated by {c.facilitator}</p>
+                    <h4 className="font-display text-base font-bold text-foreground">{c.topic}</h4>
+                    <p className="text-muted-foreground text-sm mt-1 italic">Facilitated by {c.facilitator}</p>
                   </div>
                 </div>
               ))}

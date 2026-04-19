@@ -11,40 +11,40 @@ const leaders = [
 
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-surface-container/30">
+    <section id="leadership" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-stats-bg">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Our Team
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           Leadership Team
         </h2>
-        <p className="text-on-surface/60 text-lg max-w-2xl mb-16">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
           Meet the dedicated students steering ASAMU towards academic and professional excellence.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {leaders.map((leader) => (
             <div
               key={leader.name}
-              className="bg-surface-container p-6 md:p-8 rounded-lg hover:bg-surface-high transition-colors group"
+              className="bg-white p-8 rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group"
             >
               {/* Photo placeholder */}
-              <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary/30 transition-colors">
-                <span className="font-display text-2xl font-extrabold text-primary">
+              <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center mb-8 group-hover:rotate-6 transition-transform shadow-lg shadow-primary/20">
+                <span className="font-display text-2xl font-extrabold text-primary-text">
                   {leader.name.split(" ").map(n => n[0]).join("")}
                 </span>
               </div>
-              <h3 className="font-display text-lg font-bold text-on-surface tracking-tight">
+              <h3 className="font-display text-xl font-bold text-foreground tracking-tight leading-none mb-2">
                 {leader.name}
               </h3>
-              <div className="text-[10px] tracking-[0.2em] uppercase text-primary font-bold mt-1 mb-3">
+              <div className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-5">
                 {leader.title}
               </div>
-              <p className="text-on-surface/60 text-sm leading-relaxed mb-3">
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 {leader.bio}
               </p>
-              <div className="text-[10px] tracking-[0.15em] uppercase text-on-surface/40 font-medium">
+              <div className="pt-4 border-t border-subtle-border text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-bold">
                 Tenure: {leader.tenure}
               </div>
             </div>

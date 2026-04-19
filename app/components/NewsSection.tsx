@@ -9,43 +9,44 @@ const posts = [
 
 export default function NewsSection() {
   return (
-    <section id="news" className="py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-surface">
+    <section id="news" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Stay Informed
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           News & Blog
         </h2>
-        <p className="text-on-surface/60 text-base md:text-lg max-w-2xl mb-16">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
           Association updates, industry insights, member spotlights, and event recaps.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <article
               key={post.title}
-              className="bg-surface-container rounded-lg overflow-hidden hover:bg-surface-high transition-colors group cursor-pointer flex flex-col"
+              className="bg-white rounded-3xl overflow-hidden border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group cursor-pointer flex flex-col"
             >
               {/* Image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-primary-container/10 flex items-center justify-center">
-                <span className="text-primary/30 text-xs tracking-widest uppercase font-bold">{post.category}</span>
+              <div className="h-56 bg-stats-bg flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="text-accent/30 text-[10px] tracking-[0.3em] uppercase font-bold px-6 text-center">{post.category}</span>
               </div>
-              <div className="p-6 md:p-8 flex flex-col flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="px-2.5 py-0.5 bg-primary/15 text-primary text-[10px] tracking-[0.15em] uppercase font-bold rounded-full">
+              <div className="p-8 md:p-10 flex flex-col flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="px-3 py-1 bg-primary text-primary-text text-[10px] tracking-[0.1em] uppercase font-bold rounded-md">
                     {post.category}
                   </span>
-                  <span className="text-[10px] text-on-surface/40 tracking-wide">{post.date}</span>
+                  <span className="text-[10px] text-muted-foreground tracking-wide font-medium">{post.date}</span>
                 </div>
-                <h3 className="font-display text-lg font-bold text-on-surface tracking-tight leading-snug mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-display text-xl font-bold text-foreground tracking-tight leading-snug mb-4 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-on-surface/60 text-sm leading-relaxed flex-1">{post.excerpt}</p>
-                <div className="mt-6 text-primary text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Read More
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <p className="text-muted-foreground text-sm leading-relaxed flex-1">{post.excerpt}</p>
+                <div className="mt-8 text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                  Read Article
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
               </div>

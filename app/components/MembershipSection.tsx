@@ -23,28 +23,28 @@ export default function MembershipSection() {
   const [activeTab, setActiveTab] = useState<"benefits" | "join" | "fees">("benefits");
 
   return (
-    <section id="membership" className="py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-surface">
+    <section id="membership" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-stats-bg">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Become a Member
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           Membership
         </h2>
-        <p className="text-on-surface/60 text-lg max-w-2xl mb-12">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
           Join a community of ambitious accounting students committed to academic excellence and professional growth.
         </p>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-12 flex-wrap">
+        <div className="flex gap-4 mb-16 flex-wrap">
           {(["benefits", "join", "fees"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold transition-all capitalize ${
+              className={`px-8 py-3 rounded-full text-sm font-bold transition-all capitalize border-[1.5px] ${
                 activeTab === tab
-                  ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "bg-surface-container text-on-surface/60 hover:text-on-surface hover:bg-surface-high"
+                  ? "bg-primary text-primary-text border-primary shadow-xl shadow-primary/20 scale-105"
+                  : "bg-white text-foreground border-subtle-border hover:border-accent hover:text-accent"
               }`}
             >
               {tab === "join" ? "How to Join" : tab === "fees" ? "Fees & Plans" : tab}
@@ -54,17 +54,19 @@ export default function MembershipSection() {
 
         {/* Benefits */}
         {activeTab === "benefits" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((b) => (
               <div
                 key={b.title}
-                className="bg-surface-container p-6 md:p-8 rounded-lg hover:bg-surface-high transition-colors group"
+                className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group"
               >
-                <div className="text-3xl mb-4">{b.icon}</div>
-                <h3 className="font-display text-xl font-bold text-on-surface mb-2 tracking-tight">
+                <div className="p-4 bg-stats-bg w-fit rounded-2xl mb-6 group-hover:scale-110 transition-transform">
+                  {b.icon}
+                </div>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-4 tracking-tight">
                   {b.title}
                 </h3>
-                <p className="text-on-surface/60 text-sm leading-relaxed">{b.desc}</p>
+                <p className="text-muted-foreground text-base leading-relaxed">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -72,16 +74,18 @@ export default function MembershipSection() {
 
         {/* How to Join */}
         {activeTab === "join" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s) => (
-              <div key={s.step} className="bg-surface-container p-6 md:p-8 rounded-lg relative">
-                <div className="font-display text-5xl font-extrabold text-primary/20 mb-4">
+              <div key={s.step} className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border relative overflow-hidden group">
+                <div className="font-display text-7xl font-black text-stats-bg absolute -top-4 -right-4 group-hover:text-accent/10 transition-colors">
                   {s.step}
                 </div>
-                <h3 className="font-display text-lg font-bold text-on-surface mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-on-surface/60 text-sm leading-relaxed">{s.desc}</p>
+                <div className="relative z-10">
+                  <h3 className="font-display text-xl font-bold text-foreground mb-4">
+                    {s.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -89,44 +93,44 @@ export default function MembershipSection() {
 
         {/* Fees */}
         {activeTab === "fees" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
-            <div className="bg-surface-container p-6 sm:p-8 md:p-10 rounded-lg border border-white/5">
-              <div className="text-[10px] tracking-[0.3em] uppercase text-on-surface/50 font-bold mb-2">
-                Semester
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+            <div className="bg-white p-8 sm:p-12 rounded-3xl border border-subtle-border shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-[10px] tracking-[0.3em] uppercase text-accent font-bold mb-4">
+                Semester Plan
               </div>
-              <div className="font-display text-4xl font-extrabold text-on-surface mb-1">
+              <div className="font-display text-5xl font-extrabold text-foreground mb-2">
                 UGX 20,000
               </div>
-              <p className="text-on-surface/50 text-sm mb-6">Per semester, renewable</p>
-              <ul className="space-y-3 text-sm text-on-surface/70">
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> All events access</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Study materials</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Networking sessions</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Member portal</li>
+              <p className="text-muted-foreground text-sm mb-8">Per semester, renewable</p>
+              <ul className="space-y-4 text-sm text-foreground/80 mb-10">
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent/20 text-accent rounded-full text-xs">✓</span> All events access</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent/20 text-accent rounded-full text-xs">✓</span> Study materials</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent/20 text-accent rounded-full text-xs">✓</span> Networking sessions</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent/20 text-accent rounded-full text-xs">✓</span> Member portal</li>
               </ul>
-              <button className="mt-8 w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-lg hover:opacity-90 transition-opacity">
-                Join Now
+              <button className="w-full py-4 bg-white border-2 border-accent text-foreground font-bold rounded-full hover:bg-accent hover:text-white transition-all">
+                Select Semester
               </button>
             </div>
-            <div className="bg-surface-container p-6 sm:p-8 md:p-10 rounded-lg border border-primary/30 relative overflow-hidden">
-              <div className="absolute top-4 right-4 px-3 py-1 bg-primary/20 text-primary text-[10px] tracking-[0.2em] uppercase font-bold rounded-full">
-                Best Value
+            <div className="bg-white p-8 sm:p-12 rounded-3xl border-2 border-accent shadow-2xl shadow-accent/10 relative overflow-hidden scale-105">
+              <div className="absolute top-6 right-6 px-4 py-1.5 bg-accent text-white text-[10px] tracking-[0.2em] uppercase font-bold rounded-full">
+                Most Popular
               </div>
-              <div className="text-[10px] tracking-[0.3em] uppercase text-on-surface/50 font-bold mb-2">
-                Annual
+              <div className="text-[10px] tracking-[0.3em] uppercase text-accent font-bold mb-4">
+                Annual Plan
               </div>
-              <div className="font-display text-4xl font-extrabold text-on-surface mb-1">
+              <div className="font-display text-5xl font-extrabold text-foreground mb-2">
                 UGX 35,000
               </div>
-              <p className="text-on-surface/50 text-sm mb-6">Full academic year</p>
-              <ul className="space-y-3 text-sm text-on-surface/70">
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Everything in Semester</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Priority internship alerts</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Certificate of membership</li>
-                <li className="flex items-center gap-2"><span className="text-primary">✓</span> Annual gala invitation</li>
+              <p className="text-muted-foreground text-sm mb-8">Full academic year</p>
+              <ul className="space-y-4 text-sm text-foreground/80 mb-10">
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent text-white rounded-full text-xs">✓</span> Everything in Semester</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent text-white rounded-full text-xs">✓</span> Priority internship alerts</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent text-white rounded-full text-xs">✓</span> Certificate of membership</li>
+                <li className="flex items-center gap-3"><span className="w-5 h-5 flex items-center justify-center bg-accent text-white rounded-full text-xs">✓</span> Annual gala invitation</li>
               </ul>
-              <button className="mt-8 w-full py-3 bg-white text-surface font-bold rounded-lg hover:bg-on-surface transition-colors">
-                Join Now
+              <button className="w-full py-4 bg-primary text-primary-text font-bold rounded-full hover:scale-[1.02] transition-all shadow-xl shadow-primary/20">
+                Join Now (Annual)
               </button>
             </div>
           </div>

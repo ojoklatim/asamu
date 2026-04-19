@@ -59,62 +59,61 @@ const partners = [
 
 export default function PartnershipsSection() {
   return (
-    <section id="partnerships" className="py-20 md:py-24 px-4 sm:px-6 md:px-8 bg-surface">
+    <section id="partnerships" className="py-20 md:py-32 px-4 sm:px-6 md:px-8 bg-stats-bg">
       <div className="max-w-6xl mx-auto">
-        <p className="text-[10px] tracking-[0.4em] uppercase text-primary font-bold mb-4">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-accent font-bold mb-4">
           Industry Connections
         </p>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-on-surface mb-6 tracking-tight">
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-foreground mb-6 tracking-tighter">
           Corporate Partnerships
         </h2>
-        <p className="text-on-surface/60 text-base md:text-lg max-w-2xl mb-16">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
           ASAMU partners with leading firms and professional bodies to bring members direct access to careers in accounting and finance.
         </p>
 
         {/* Partner logo bar */}
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 mb-16 pb-16 border-b border-white/5 opacity-50">
+        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 mb-20 pb-16 border-b border-subtle-border">
           {partners.map((p) => (
-            <img key={p.short} src={p.logoUrl} alt={p.name} className="h-8 object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <img key={p.short} src={p.logoUrl} alt={p.name} className="h-8 md:h-10 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all hover:scale-110" />
           ))}
         </div>
 
         {/* Partner cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {partners.map((p) => (
             <div
               key={p.name}
-              className="bg-surface-container p-6 md:p-8 rounded-lg hover:bg-surface-high transition-colors flex flex-col justify-between"
+              className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all flex flex-col justify-between group"
             >
               <div>
-                {/* Logo placeholder */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-lg bg-white p-2 flex items-center justify-center shrink-0 shadow-lg">
+                <div className="flex items-center gap-5 mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-white p-3 flex items-center justify-center shrink-0 shadow-lg border border-subtle-border group-hover:scale-110 transition-transform">
                     <img src={p.logoUrl} alt={p.short} className="w-full h-full object-contain" />
                   </div>
                   <div>
-                    <h3 className="font-display text-base font-bold text-on-surface tracking-tight leading-tight">
+                    <h3 className="font-display text-lg font-bold text-foreground tracking-tight leading-tight">
                       {p.name}
                     </h3>
                     {p.recruiting && (
-                      <div className="flex items-center gap-1.5 mt-1">
-                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                        <span className="text-[10px] tracking-[0.15em] uppercase text-green-400 font-bold">
-                          Actively Recruiting
+                      <div className="flex items-center gap-1.5 mt-2">
+                        <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                        <span className="text-[10px] tracking-[0.1em] uppercase text-accent font-bold">
+                          Hiring Now
                         </span>
                       </div>
                     )}
                   </div>
                 </div>
-                <p className="text-on-surface/60 text-sm leading-relaxed mb-4">{p.desc}</p>
-                <div className="bg-surface/50 rounded-lg p-3 mb-4">
-                  <div className="text-[10px] tracking-[0.2em] uppercase text-on-surface/40 font-bold mb-1">
-                    Open Positions
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{p.desc}</p>
+                <div className="bg-stats-bg rounded-2xl p-4 mb-6 border border-subtle-border">
+                  <div className="text-[10px] tracking-[0.2em] uppercase text-accent font-bold mb-2">
+                    Key Opportunities
                   </div>
-                  <div className="text-on-surface/70 text-sm">{p.internships}</div>
+                  <div className="text-foreground text-sm font-medium">{p.internships}</div>
                 </div>
               </div>
-              <button className="w-full py-2.5 bg-primary/15 text-primary font-bold text-sm rounded-lg hover:bg-primary/25 transition-colors">
-                View Details
+              <button className="w-full py-3 bg-white border-[1.5px] border-accent text-foreground font-bold text-sm rounded-full hover:bg-accent hover:text-white transition-all shadow-sm">
+                Partnership Profile
               </button>
             </div>
           ))}

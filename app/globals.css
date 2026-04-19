@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b1326;
-  --foreground: #dae2fd;
+  --background: #ffffff;
+  --foreground: #0a1628;
   
-  --surface-lowest: #060e20;
-  --surface: #0b1326;
-  --surface-container: #171f33;
-  --surface-high: #242c40;
+  --primary: #1a3a6e;
+  --primary-text: #ffffff;
   
-  --primary: #2563eb;
-  --primary-container: #1d4ed8;
+  --accent: #1a3a6e;
+  --muted-foreground: #5a6a7a;
   
-  --on-surface: #dae2fd;
-  --ghost-border: rgba(67, 70, 83, 0.15);
+  --stats-bg: #f8fafc;
+  --subtle-border: #e2e8f0;
+  
+  --on-surface: #0a1628;
 }
 
 @theme inline {
@@ -22,26 +22,24 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-manrope);
   
-  --color-surface-lowest: var(--surface-lowest);
-  --color-surface: var(--surface);
-  --color-surface-container: var(--surface-container);
-  --color-surface-high: var(--surface-high);
-  
   --color-primary: var(--primary);
-  --color-primary-container: var(--primary-container);
+  --color-primary-text: var(--primary-text);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-stats-bg: var(--stats-bg);
+  --color-subtle-border: var(--subtle-border);
   
   --color-on-surface: var(--on-surface);
-  --color-ghost-border: var(--ghost-border);
 }
 
 @layer utilities {
   .hero-gradient {
-    background: radial-gradient(circle at 50% -20%, var(--surface-container) 0%, var(--surface) 100%);
+    background: radial-gradient(circle at 50% -20%, #f1f5f9 0%, #ffffff 100%);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
