@@ -1,10 +1,14 @@
+"use client";
+
+import Link from "next/link";
+
 const upcomingEvents = [
-  { month: "Oct", day: "26", title: "Fall Networking Mixer", time: "6:00 PM - 8:00 PM", desc: "Network with professionals from Deloitte and BDO Uganda. Bring your CV!", type: "Networking" },
-  { month: "Nov", day: "14", title: "Tax Season Workshop", time: "6:00 PM - 8:00 PM", desc: "Hands-on workshop on Uganda tax computation with ICPAU practitioners.", type: "Workshop" },
-  { month: "Dec", day: "05", title: "Leadership Panel", time: "4:00 PM - 6:00 PM", desc: "Panel discussion with ASAMU alumni now in senior finance roles.", type: "Panel" },
-  { month: "Jan", day: "18", title: "ACCA Prep Bootcamp", time: "9:00 AM - 4:00 PM", desc: "Full-day intensive for F1-F3 papers with Forvis Mazars facilitators.", type: "Bootcamp" },
-  { month: "Feb", day: "08", title: "Annual General Meeting", time: "2:00 PM - 5:00 PM", desc: "Review the year, elect new leadership, and plan the road ahead.", type: "Meeting" },
-  { month: "Mar", day: "22", title: "Career Fair 2026", time: "10:00 AM - 3:00 PM", desc: "All seven corporate partners present with internship and job openings.", type: "Fair" },
+  { month: "Oct", day: "26", title: "Fall Networking Mixer", time: "6:00 PM - 8:00 PM", desc: "Network with professionals from Deloitte and BDO Uganda. Bring your CV!", type: "Networking", image: "/events/mixer.jpg" },
+  { month: "Nov", day: "14", title: "Tax Season Workshop", time: "6:00 PM - 8:00 PM", desc: "Hands-on workshop on Uganda tax computation with ICPAU practitioners.", type: "Workshop", image: "/events/tax.jpg" },
+  { month: "Dec", day: "05", title: "Leadership Panel", time: "4:00 PM - 6:00 PM", desc: "Panel discussion with ASAMU alumni now in senior finance roles.", type: "Panel", image: "/events/panel.jpg" },
+  { month: "Jan", day: "18", title: "ACCA Prep Bootcamp", time: "9:00 AM - 4:00 PM", desc: "Full-day intensive for F1-F3 papers with Forvis Mazars facilitators.", type: "Bootcamp", image: "/events/acca.jpg" },
+  { month: "Feb", day: "08", title: "Annual General Meeting", time: "2:00 PM - 5:00 PM", desc: "Review the year, elect new leadership, and plan the road ahead.", type: "Meeting", image: "/events/agm.jpg" },
+  { month: "Mar", day: "22", title: "Career Fair 2026", time: "10:00 AM - 3:00 PM", desc: "All seven corporate partners present with internship and job openings.", type: "Fair", image: "/events/fair.jpg" },
 ];
 
 const testimonials = [
@@ -32,33 +36,50 @@ export default function EventsSection() {
           {upcomingEvents.map((event) => (
             <div
               key={event.title}
-              className="bg-white p-8 md:p-10 rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group flex flex-col justify-between min-h-[350px]"
+              className="bg-white rounded-3xl border border-subtle-border hover:border-accent hover:shadow-2xl hover:shadow-accent/5 transition-all group flex flex-col overflow-hidden"
             >
-              <div>
-                <div className="flex items-center gap-5 mb-6">
-                  <div className="bg-stats-bg rounded-2xl p-4 text-center min-w-[70px] border border-subtle-border">
-                    <div className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">
-                      {event.month}
-                    </div>
-                    <div className="text-2xl font-black text-foreground leading-none mt-1">
-                      {event.day}
-                    </div>
-                  </div>
-                  <div>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] tracking-[0.1em] uppercase font-bold rounded-md">
-                      {event.type}
-                    </span>
-                    <div className="text-sm text-muted-foreground mt-2 font-medium">{event.time}</div>
-                  </div>
-                </div>
-                <h3 className="font-display text-2xl font-bold text-foreground tracking-tight leading-tight mb-4">
-                  {event.title}
-                </h3>
-                <p className="text-muted-foreground text-base leading-relaxed">{event.desc}</p>
+              {/* Event Image Allowance */}
+              <div className="aspect-video bg-stats-bg border-b border-subtle-border flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-110"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <span className="text-[10px] tracking-[0.2em] uppercase text-accent/30 font-bold">
+                  Event Image
+                </span>
               </div>
-              <button className="mt-8 w-full py-3.5 bg-primary text-primary-text font-bold rounded-full hover:scale-[1.02] transition-all shadow-lg shadow-primary/10">
-                Register Now
-              </button>
+
+              <div className="p-8 md:p-10 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-5 mb-6">
+                    <div className="bg-stats-bg rounded-2xl p-4 text-center min-w-[70px] border border-subtle-border">
+                      <div className="text-[10px] font-bold text-accent uppercase tracking-widest leading-none">
+                        {event.month}
+                      </div>
+                      <div className="text-2xl font-black text-foreground leading-none mt-1">
+                        {event.day}
+                      </div>
+                    </div>
+                    <div>
+                      <span className="px-3 py-1 bg-primary/10 text-primary text-[10px] tracking-[0.1em] uppercase font-bold rounded-md">
+                        {event.type}
+                      </span>
+                      <div className="text-sm text-muted-foreground mt-2 font-medium">{event.time}</div>
+                    </div>
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-foreground tracking-tight leading-tight mb-4">
+                    {event.title}
+                  </h3>
+                  <p className="text-muted-foreground text-base leading-relaxed">{event.desc}</p>
+                </div>
+                <button className="mt-8 w-full py-3.5 bg-primary text-primary-text font-bold rounded-full hover:scale-[1.02] transition-all shadow-lg shadow-primary/10">
+                  Register Now
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -85,6 +106,22 @@ export default function EventsSection() {
                 </span>
               </div>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link 
+              href="/gallery" 
+              className="group flex items-center gap-2 text-sm font-bold text-accent hover:text-primary transition-colors"
+            >
+              See More
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
 
